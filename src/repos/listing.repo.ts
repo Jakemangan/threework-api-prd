@@ -19,6 +19,9 @@ export class ListingRepository {
       .into('listings')
       .then((res) => {
         console.log(res);
+      })
+      .catch(() => {
+        /* do whatever you want here */
       });
   }
 
@@ -28,6 +31,9 @@ export class ListingRepository {
       .into('listings_metadata')
       .then((res) => {
         console.log(res);
+      })
+      .catch(() => {
+        /* do whatever you want here */
       });
   }
 }
