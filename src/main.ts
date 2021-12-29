@@ -21,7 +21,7 @@ async function bootstrap() {
   console.log(process.env.SERVICE_KEY);
   const app = await NestFactory.create(AppModule);
   app.enableCors({
-    origin: ['http://localhost:3000'],
+    origin: ['*'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   });
   app.use(json({ limit: '5mb' }));
