@@ -1,5 +1,4 @@
 //To specify environment do "knex migrate:latest --env production"
-
 const environment = process.env.ENVIRONMENT || 'development'
 const config = require('../knexfile.js')[environment];
 module.exports = require('knex')(config);

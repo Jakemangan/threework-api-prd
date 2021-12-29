@@ -1,5 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
+import { urlencoded, json } from 'express';
 require('dotenv').config();
 const knex = require('knex')({
   client: 'pg',
@@ -23,6 +24,8 @@ async function bootstrap() {
     origin: ['http://localhost:3000'],
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   });
+  app.use(json({ limit: '5mb' }));
+  app.use(urlencoded({ extended: true, limit: '5mb' }));
   await app.listen(5050);
 }
 bootstrap();
