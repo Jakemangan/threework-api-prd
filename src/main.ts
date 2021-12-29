@@ -1,5 +1,5 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
+import { AppModule } from '../app.module';
 import { urlencoded, json } from 'express';
 require('dotenv').config();
 const knex = require('knex')({
@@ -24,7 +24,9 @@ async function bootstrap() {
   //   origin: ['http://localhost:3000'],
   //   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   // });
-  app.enableCors();
+  app.enableCors({
+    origin: true,
+  });
   app.use(json({ limit: '5mb' }));
   app.use(urlencoded({ extended: true, limit: '5mb' }));
   await app.listen(5050);
