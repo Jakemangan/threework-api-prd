@@ -20,6 +20,8 @@ export class ListingController {
   @UseInterceptors(FileInterceptor('file'))
   @Post()
   async postListing(@Body() dto: JobListingDto) {
+    console.log('/listing triggered with: ', dto);
+    console.log('db url: ', process.env.DATABASE_URL);
     this.listingService.handleNewListing(dto);
   }
 }
