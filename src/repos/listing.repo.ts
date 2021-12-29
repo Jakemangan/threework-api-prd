@@ -20,8 +20,8 @@ export class ListingRepository {
       .then((res) => {
         console.log(res);
       })
-      .catch(() => {
-        /* do whatever you want here */
+      .catch(err => {
+        console.log(err);
       });
   }
 
@@ -32,8 +32,8 @@ export class ListingRepository {
       .then((res) => {
         console.log(res);
       })
-      .catch(() => {
-        /* do whatever you want here */
+      .catch(err => {
+        console.log(err);
       });
   }
 }
