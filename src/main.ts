@@ -1,5 +1,5 @@
 import { NestFactory } from '@nestjs/core';
-import { AppModule } from '../app.module';
+import { AppModule } from './app.module';
 import { urlencoded, json } from 'express';
 require('dotenv').config();
 const knex = require('knex')({
