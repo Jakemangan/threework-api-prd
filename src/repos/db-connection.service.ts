@@ -10,6 +10,7 @@ export class DbConnectionService {
   constructor() {
     let connectionDetailsForEnv =
       connectionDetails[process.env.NODE_ENV || 'development'];
+    console.log('ENV: ', process.env.NODE_ENV);
     console.log('DB conn: ', connectionDetailsForEnv);
     this.knex = knex(connectionDetailsForEnv);
   }
