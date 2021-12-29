@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { Sequelize } from 'sequelize';
-import connectionDetails from '../../knexfile';
 import knex, { Knex } from 'knex';
+import connectionDetails from 'knexfile';
 
 @Injectable()
 export class DbConnectionService {
