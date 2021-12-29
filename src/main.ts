@@ -25,7 +25,9 @@ async function bootstrap() {
   //   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
   // });
   app.enableCors({
-    origin: true,
+    origin: '*',
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    allowedHeaders: 'Content-Type, Accept',
   });
   app.use(json({ limit: '5mb' }));
   app.use(urlencoded({ extended: true, limit: '5mb' }));
