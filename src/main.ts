@@ -1,6 +1,20 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 require('dotenv').config();
+const knex = require('knex')({
+  client: 'pg',
+  version: '7.2',
+  connection: {
+    host: 'db.giabgigmxhfkekaahkly.supabase.co',
+    user: 'postgres',
+    password: 'h76G1KK@4Ls%rW',
+    database: 'postgres',
+    port: 3306,
+  },
+  migrations: {
+    tableName: 'migrations',
+  },
+});
 
 async function bootstrap() {
   console.log(process.env.SERVICE_KEY);
