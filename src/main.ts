@@ -20,10 +20,11 @@ const knex = require('knex')({
 async function bootstrap() {
   console.log(process.env.SERVICE_KEY);
   const app = await NestFactory.create(AppModule);
-  app.enableCors({
-    origin: ['*'],
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  });
+  // app.enableCors({
+  //   origin: ['http://localhost:3000'],
+  //   methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  // });
+  app.enableCors();
   app.use(json({ limit: '5mb' }));
   app.use(urlencoded({ extended: true, limit: '5mb' }));
   await app.listen(5050);
