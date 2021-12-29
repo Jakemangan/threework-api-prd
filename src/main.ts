@@ -46,6 +46,7 @@ async function bootstrap() {
     origin: '*',
   });
 
+  console.log('DATABASE_URL: ', process.env.DATABASE_URL);
   app.use(json({ limit: '5mb' }));
   app.use(urlencoded({ extended: true, limit: '5mb' }));
   await app.listen(process.env.PORT || 5050);
